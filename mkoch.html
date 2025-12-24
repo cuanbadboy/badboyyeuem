@@ -401,3 +401,17 @@
   </script>
 </body>
 </html>
+<script>
+const music = document.getElementById("music");
+music.volume = 0.5;
+
+// tự phát nhạc khi user click lần đầu
+function autoPlayMusic() {
+  music.play().catch(() => {});
+  document.removeEventListener("click", autoPlayMusic);
+  document.removeEventListener("touchstart", autoPlayMusic);
+}
+
+document.addEventListener("click", autoPlayMusic);
+document.addEventListener("touchstart", autoPlayMusic);
+</script>
